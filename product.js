@@ -50,7 +50,7 @@ function displayItems(data){
         button.innerText="Add to WishList";
         
         button.addEventListener("click",()=>{
-            addToWishList(itemData.itemId); 
+            addToWishList(itemData); 
             button.textContent="Added 📦";
 
         })
@@ -64,15 +64,16 @@ function displayItems(data){
 
 //Code for addToWishList
 
-async function addToWishList(itemId) {
+async function addToWishList(product) {
     console.log("Inside addToWishList");
     try {
-        const response = await fetch(`${apiUrl}wishlists/${wishListId}/${itemId}`, {
+        const response = await fetch(`${apiUrl}wishlists`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify(product),
         });
         
         if (!response.ok) throw new Error(`Request failed: ${response.statusText}`);

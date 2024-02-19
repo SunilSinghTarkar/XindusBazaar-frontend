@@ -1,5 +1,4 @@
 let token=localStorage.getItem("jwtToken");
-let wishListId=localStorage.getItem("wishListId");
 let apiUrl = 'https://xindusbazaar-production.up.railway.app/api/';
 
 let userName=localStorage.getItem("userName");
@@ -8,7 +7,7 @@ userInput.textContent="Hello "+ userName +"👋";
 
 async function fetchDataWithToken() {
     try {
-        const response = await fetch(`${apiUrl}wishlists/${wishListId}`, {
+        const response = await fetch(`${apiUrl}wishlists`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -60,6 +59,7 @@ function displayItems(data){
     });  
     totalCount.textContent="Total Items: "+data.length;
     totalPrice.textContent="Total Price: ₹"+totalAmount.toFixed(2);
+    if(data.length==0)container.innerHTML=" <h1>Your WishList is Empty!</h1>";
 }
 
 
@@ -69,7 +69,7 @@ function displayItems(data){
 async function removeFromWishList(itemId) {
     console.log("Inside removeFromWishList");
     try {
-        const response = await fetch(`${apiUrl}wishlists/${wishListId}/${itemId}`, {
+        const response = await fetch(`${apiUrl}wishlists/${itemId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,

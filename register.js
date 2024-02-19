@@ -20,7 +20,6 @@ async function registerUserAsync(userData) {
     try {
         const registrationResult = await registerUser(userData);
         console.log('Registration successful:', registrationResult);
-               alert("Registration successful: "+userData.userName);
 
     } catch (error) {
         console.error('Registration failed:', error.message);
