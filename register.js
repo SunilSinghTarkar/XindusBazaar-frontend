@@ -1,4 +1,4 @@
-let apiUrl = 'https://xindusbazaar-production.up.railway.app/api/';
+let apiUrl = 'https://xindusbazaar-1.onrender.com/api/';
 
 let regirationForm=document.getElementById("registration-form");
 

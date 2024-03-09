@@ -1,6 +1,5 @@
 let token=localStorage.getItem("jwtToken");
-let wishListId=localStorage.getItem("wishListId");
-let apiUrl = 'https://xindusbazaar-production.up.railway.app/api/';
+let apiUrl = 'https://xindusbazaar-1.onrender.com/api/';
 
 let userName=localStorage.getItem("userName");
 let userInput=document.getElementById("userName");
