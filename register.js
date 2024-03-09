@@ -106,3 +106,4 @@ async function registerUser(userData) {
         console.error('Error:', error); // Handle errors
       }
     }
+
