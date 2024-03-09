@@ -21,6 +21,7 @@ async function registerUserAsync(userData) {
         const registrationResult = await registerUser(userData);
         console.log('Registration successful:', registrationResult);
         window.location.href="/login.html";
+
     } catch (error) {
         console.error('Registration failed:', error.message);
     }
@@ -106,4 +107,3 @@ async function registerUser(userData) {
         console.error('Error:', error); // Handle errors
       }
     }
-
